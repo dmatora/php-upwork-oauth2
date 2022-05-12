@@ -94,6 +94,7 @@ final class OAuth2ClientLib extends AbstractOAuth implements ApiClient
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             $eResponse = $e->getResponse();
             $response = $eResponse->getBody()->getContents();
+            return $response;
 	} catch (\Exception $e) {
 	    $response = $e->getResponseBody();
 	}
